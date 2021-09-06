@@ -7,23 +7,22 @@ $("#fogomb").click (()  => {
             let szoveg        = $("#inputMezo").val()
 
             hanyadiksor       = parseInt(hanyadiksor)+1
-            hanyadiksorString = ` ${hanyadiksor} `
-                let sorAzonosito  = `  sor${hanyadiksor} `
-                let szinAzonosito = ` szin${hanyadiksor} `
-                let rendAzonosito = ` rend${hanyadiksor} `
-                let megnAzonosito = ` megn${hanyadiksor} `
-                let jegyAzonosito = ` jegy${hanyadiksor} `
-                let elorAzonosito = ` elor${hanyadiksor} `
+                let sorAzonosito  = `sor${hanyadiksor}`
+                let szinAzonosito = `szin${hanyadiksor}`
+                let rendAzonosito = `rend${hanyadiksor}`
+                let megnAzonosito = `megn${hanyadiksor}`
+                let jegyAzonosito = `jegy${hanyadiksor}`
+                let elorAzonosito = `elor${hanyadiksor}`
 
 
-            $("ul").append(` <li   class="sor"   id="sorAzonosito"   data-szamozo=hanyadiksorString   value="#inputMezo"  >
+            $("ul").append(` <li   class="sor"   id="${sorAzonosito}"   data-szamozo="${hanyadiksor}">
                                     ${szoveg}
                                     <button class="ikon">  <i class="fas fa-space-shuttle"></i>   </button>
-                                    <button class="elor" id="elorAzonosito" >   Előrelépek  </button>
-                                    <button class="jegy" id="jegyAzonosito" >   Jegyzet     </button>
-                                    <button class="megn" id="megnAzonosito" >   Megnevezés  </button>
-                                    <button class="rend" id="rendAzonosito" >   Sorrend     </button>
-                                    <button class="szin" id="szinAzonosito"    data-szamozo=hanyadiksorString    >   Szín        </button>
+                                    <button class="elor" id="${elorAzonosito}" >   Előrelépek  </button>
+                                    <button class="jegy" id="${jegyAzonosito}" >   Jegyzet     </button>
+                                    <button class="megn" id="${megnAzonosito}" >   Megnevezés  </button>
+                                    <button class="rend" id="${rendAzonosito}" >   Sorrend     </button>
+                                    <button class="szin" id="${szinAzonosito}"    data-szamozo="${hanyadiksor}"    >   Szín        </button>
 
                              </li>
             `)
@@ -46,8 +45,9 @@ $(".sor").on(    "click", ".elor", (Event) =>  {
 
 // Csak a HTML-ből származó li-kattintását érzékeli. Miért???????????????????????????????????
 // Csak a szövegre kattintok. (+ Simán az összes li-t figyelem.)
-$("li").click(() => {
-$("li").css ("color", "red")
+$("ul").on("click","li",(event) => {
+                                        // console.log(event)
+$(event.target).css("color", "red")
 }
 )
 
@@ -66,13 +66,6 @@ $(".szin").click((event) => {
 }
 )
 */
-
-
-
-
-
-
-
 
 
 
